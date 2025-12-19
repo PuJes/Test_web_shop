@@ -1,16 +1,19 @@
 
-import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import { HashRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
+import Admin from './pages/Admin';
 import Cart from './components/Cart';
 import Footer from './components/Footer';
 import { Product, CartItem } from './types';
 
-const App: React.FC = () => {
+const AppContent: React.FC = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
 
   const addToCart = (product: Product) => {
     setCart(prev => {
@@ -35,28 +38,47 @@ const App: React.FC = () => {
     setCart(prev => prev.filter(item => item.id !== id));
   };
 
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    if (query.trim() && window.location.hash !== '#/shop') {
+      navigate('/shop');
+    }
+  };
+
+  return (
+    <div className="min-h-screen flex flex-col bg-white selection:bg-black selection:text-white">
+      <Navbar 
+        cartCount={cart.reduce((sum, item) => sum + item.quantity, 0)} 
+        toggleCart={() => setIsCartOpen(true)} 
+        onSearch={handleSearch}
+        searchQuery={searchQuery}
+      />
+      
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/shop" element={<Shop addToCart={addToCart} searchQuery={searchQuery} />} />
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+      </main>
+
+      <Footer />
+
+      <Cart 
+        isOpen={isCartOpen} 
+        onClose={() => setIsCartOpen(false)} 
+        items={cart}
+        updateQuantity={updateQuantity}
+        removeItem={removeItem}
+      />
+    </div>
+  );
+};
+
+const App: React.FC = () => {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col bg-white selection:bg-black selection:text-white">
-        <Navbar cartCount={cart.reduce((sum, item) => sum + item.quantity, 0)} toggleCart={() => setIsCartOpen(true)} />
-        
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/shop" element={<Shop addToCart={addToCart} />} />
-          </Routes>
-        </main>
-
-        <Footer />
-
-        <Cart 
-          isOpen={isCartOpen} 
-          onClose={() => setIsCartOpen(false)} 
-          items={cart}
-          updateQuantity={updateQuantity}
-          removeItem={removeItem}
-        />
-      </div>
+      <AppContent />
     </Router>
   );
 };

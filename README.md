@@ -1,20 +1,19 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 
-# Run and deploy your AI Studio app
+# The Dessert Room Clone
 
-This contains everything you need to run your app locally.
+一个极致简约的高端甜点电商平台，复刻自 [The Dessert Room](https://www.thedessertroom.co.nz/)。
 
-View your app in AI Studio: https://ai.studio/apps/drive/1NU5lzAZC_bb3gpH8CrRDMnQQXWF3ZEWh
+## 技术栈
+- **Frontend**: React 19, TypeScript
+- **Styling**: Tailwind CSS, Lucide React
+- **Build Tool**: Vite
+- **Deployment**: Railway / GitHub Pages
 
-## Run Locally
+## 部署说明
+1. 将代码提交至 GitHub。
+2. 在 [Railway](https://railway.app/) 中关联此仓库。
+3. 系统会自动识别 `npm run build` 并进行部署。
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 管理后台
+- 路径：`#/admin`
+- 密码：`102938765aacc` (硬编码于代码中)

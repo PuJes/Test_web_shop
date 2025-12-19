@@ -2,12 +2,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import Assistant from '../components/Assistant';
 
 const FEATURED_COLLECTIONS = [
-  { id: 'cakes', name: '签名款蛋糕', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1000&auto=format&fit=crop', link: '/shop?cat=Cakes' },
-  { id: 'cupcakes', name: '精致纸杯蛋糕', image: 'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?q=80&w=1000&auto=format&fit=crop', link: '/shop?cat=Cupcakes' },
-  { id: 'macarons', name: '法式马卡龙', image: 'https://images.unsplash.com/photo-1558326567-98ae2405596b?q=80&w=1000&auto=format&fit=crop', link: '/shop?cat=Macarons' },
+  { id: 'cakes', name: 'Signature Cakes', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1000&auto=format&fit=crop', link: '/shop?cat=Cakes' },
+  { id: 'cupcakes', name: 'Artisan Cupcakes', image: 'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?q=80&w=1000&auto=format&fit=crop', link: '/shop?cat=Cupcakes' },
+  { id: 'macarons', name: 'French Macarons', image: 'https://images.unsplash.com/photo-1558326567-98ae2405596b?q=80&w=1000&auto=format&fit=crop', link: '/shop?cat=Macarons' },
 ];
 
 const Home: React.FC = () => {
@@ -22,10 +21,10 @@ const Home: React.FC = () => {
         />
         <div className="absolute inset-0 bg-black/10 flex items-center justify-center text-center px-4">
           <div className="max-w-3xl text-white">
-            <h1 className="text-5xl md:text-7xl font-light mb-6 tracking-tight">为您时刻而设的艺术</h1>
-            <p className="text-lg md:text-xl font-light mb-10 tracking-widest uppercase italic">匠心手作 · 奢华品味</p>
+            <h1 className="text-5xl md:text-7xl font-light mb-6 tracking-tight">Art for Your Moments</h1>
+            <p className="text-lg md:text-xl font-light mb-10 tracking-widest uppercase italic">Handcrafted · Luxury Taste</p>
             <Link to="/shop" className="inline-block border border-white px-10 py-4 text-sm uppercase tracking-[0.3em] hover:bg-white hover:text-black transition duration-500">
-              立即选购
+              Shop the Collection
             </Link>
           </div>
         </div>
@@ -36,10 +35,10 @@ const Home: React.FC = () => {
         <div className="flex justify-between items-end mb-12">
           <div>
             <span className="text-xs uppercase tracking-[0.2em] text-zinc-400 block mb-2 font-bold">Collections</span>
-            <h2 className="text-4xl font-normal serif">热门系列</h2>
+            <h2 className="text-4xl font-normal serif">Curated Selections</h2>
           </div>
           <Link to="/shop" className="text-sm uppercase tracking-widest flex items-center hover:opacity-60 transition">
-            查看全部 <ArrowRight size={16} className="ml-2" />
+            View All <ArrowRight size={16} className="ml-2" />
           </Link>
         </div>
 
@@ -59,15 +58,12 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* AI Assistant */}
-      <Assistant />
-
       {/* Quality Statement */}
-      <section className="py-32 bg-white text-center px-4">
+      <section className="py-32 bg-zinc-50 text-center px-4">
         <div className="max-w-2xl mx-auto italic text-2xl md:text-3xl font-light serif leading-relaxed text-zinc-700">
-          “我们相信，每一份甜点都应该讲述一个关于优雅、纯粹和快乐的故事。我们只使用最顶级的原料，将大自然的馈赠转化为指尖的艺术。”
+          “We believe every dessert should tell a story of elegance, purity, and joy. We use only the finest ingredients to transform nature's gifts into edible art.”
         </div>
-        <div className="mt-12 text-sm uppercase tracking-widest text-zinc-400">— 我们的承诺</div>
+        <div className="mt-12 text-sm uppercase tracking-widest text-zinc-400">— Our Promise</div>
       </section>
     </div>
   );

@@ -1,43 +1,39 @@
 
-# 产品需求文档 (PRD) - The Dessert Room 复刻版
+# Product Requirements Document (PRD) - The Dessert Room Clone
 
-## 主题
-高端极简风格甜点电商平台 (The Dessert Room Clone)
+## Theme
+Luxury Minimalist E-commerce Platform for high-end desserts (Targeting NZ Market).
 
-## 介绍
-本项目旨在复刻新西兰知名甜点品牌 "The Dessert Room" 的在线购物体验。平台专注于高奢蛋糕、纸杯蛋糕及礼品。其核心竞争力在于极简主义设计、高品质视觉呈现以及便捷的定制化选购流程。
+## Introduction
+This project replicates the online shopping experience of "The Dessert Room," a premium dessert brand in Auckland, NZ. It focuses on luxury cakes, cupcakes, and gift boxes with a core emphasis on minimalist design, high-quality visuals, and seamless customization.
 
-## 问题陈述
-现有的甜点选购平台往往设计冗余，无法体现产品的高级感。用户在面对多种口味和尺寸选择时常感到困惑，缺乏专业的导购建议。
+## Problem Statement
+Most dessert platforms are cluttered and fail to convey a premium brand feel. Customers often feel overwhelmed by flavor and size options and lack professional guidance for specific occasions.
 
-## 目标和目的
-1. **视觉美感**：通过大图和精致排版营造品牌高级感。
-2. **直观交互**：简化从浏览到下单的转化路径。
-3. **AI辅助**：引入智能甜点助手，根据场合（如婚礼、生日）和口味偏好提供个性化推荐。
+## Goals & Objectives
+1. **Aesthetic Excellence**: Use large imagery and clean typography to reflect a luxury brand.
+2. **Intuitive UX**: Simplify the conversion path from browsing to checkout.
+3. **AI Concierge**: Integrate a smart flavor assistant to provide personalized recommendations for NZ occasions (Weddings, Birthdays, Corporate events).
 
-## 用户故事
-- 作为一名顾客，我希望看到精致的商品大图，以便确认其品质。
-- 作为一名送礼者，我希望AI能根据我描述的场合推荐最合适的蛋糕。
-- 作为一名忙碌的职场人，我希望能快速选择口味和尺寸并完成支付。
+## User Stories
+- As a customer, I want to see exquisite product photography to ensure quality.
+- As a gift buyer, I want AI recommendations based on the occasion (e.g., a garden wedding).
+- As a busy professional, I want to quickly select flavors and sizes and checkout effortlessly.
 
-## 技术要求
-- **前端框架**：React 18+, TypeScript.
-- **样式**：Tailwind CSS.
-- **AI集成**：Gemini 3 Flash API 用于智能口味推荐。
-- **状态管理**：React Hooks (useState, useContext).
+## Technical Requirements
+- **Frontend**: React 18+, TypeScript.
+- **Styling**: Tailwind CSS.
+- **AI Integration**: Gemini 3 Flash API for intelligent flavor matching.
+- **State Management**: React Hooks (useState, useContext).
 
-## 好处
-- 提升品牌溢价，吸引高端客户群体。
-- AI 助手减少了客户犹豫时间，提高转化率。
+## Benefits
+- Increases brand prestige and attracts high-value customers.
+- AI assistant reduces choice paralysis and boosts conversion rates.
 
-## 关键绩效指标 (KPIs)
-- **跳出率**：期望低于 30%。
-- **订单转化率**：目标提升 15%。
-- **AI 交互率**：衡量用户对智能推荐的使用程度。
+## Key Performance Indicators (KPIs)
+- **Bounce Rate**: Target below 30%.
+- **Conversion Rate**: Aim for a 15% increase.
+- **AI Engagement**: Measure the usage rate of the concierge.
 
-## 开发风险
-- **图片资源**：高分辨率图片可能影响加载速度，需进行 CDN 和懒加载优化。
-- **API 延迟**：Gemini 响应延迟可能影响用户体验，需增加优雅的加载动画。
-
-## 结论
-通过结合极简美学与最前沿的 AI 技术，本项目将重新定义高端甜点的在线购物标准。
+## Conclusion
+By blending minimalist aesthetics with cutting-edge AI, this platform redefines the standard for online luxury dessert shopping in New Zealand.
